@@ -1,0 +1,46 @@
+<h1 mat-dialog-title>{{ data?.title }}</h1>
+<mat-dialog-content>
+    <form [formGroup]="productoForm" (submit)="onSave()">
+        <mat-form-field class="full-width mt-2" appearance="outline">
+            <mat-label>Nombre</mat-label>
+            <input type="text" formControlName="nombre" matInput />
+            <mat-error>
+                {{ baseForm.getErrorMessage(productoForm.get('nombre')) }}
+            </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="full-width" appearance="outline">
+            <mat-label>Precio</mat-label>
+            <input type="number" formControlName="precio" matInput />
+            <mat-error>
+                {{ baseForm.getErrorMessage(productoForm.get('precio')) }}
+            </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="full-width" appearance="outline">
+            <mat-label>Existencia</mat-label>
+            <input type="number" formControlName="existencia" matInput />
+            <mat-error>
+                {{ baseForm.getErrorMessage(productoForm.get('existencia')) }}
+            </mat-error>
+        </mat-form-field>
+
+        <div align="center">
+            <button mat-flat-button color="primary" [disabled]="productoForm.invalid" class="me-2">
+                <mat-icon>save</mat-icon>
+                {{ titleButton }}
+            </button>
+            <button mat-flat-button color="warn" (click)="onClean()">
+                <mat-icon>clear</mat-icon>
+                Limpiar
+            </button>
+        </div>
+    </form>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close>
+        <mat-icon>close</mat-icon>
+        Cerrar
+    </button>
+</mat-dialog-actions>

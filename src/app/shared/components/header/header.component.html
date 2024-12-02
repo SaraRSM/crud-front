@@ -1,0 +1,18 @@
+<!-- <mat-toolbar *ngIf="isLogged" [class.mat-elevation-z2]="true" color="primary">
+    <button mat-icon-button (click)="onToggleSidenav()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span>Sistema de Ventas</span>
+    <span class="spacer"></span>
+    <button mat-button (click)="onLogout()">Cerrar Sesión</button>
+  </mat-toolbar>  -->
+
+  <mat-toolbar color="primary">
+    <span>Productos</span>
+    <span class="spacer"></span>
+    <div>
+        <a mat-button routerLink="/">
+            <mat-icon>shopping-cart</mat-icon>
+        </a>
+    </div>
+</mat-toolbar>
